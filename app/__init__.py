@@ -1,40 +1,36 @@
-import os
-import click
-from flask.cli import with_appcontext
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
 
-__version__ = '0.2.0'
+from app import commands, main
 
-db = SQLAlchemy()
+from .config import config
+from .extensions import csrf_protect, db, migrate
 
 
 def create_app():
-    app = Flask(__name__, instance_relative_config=True)
-
-    db_path = os.path.join(app.instance_path, "dev.sqlite")
-    db_url = f"sqlite:///{db_path}"
-    # ensure the instance folder exists
-    os.makedirs(app.instance_path, exist_ok=True)
-
-
-    app.config.from_mapping(
-        SECREY_KEY="dev",
-        SQLALCHEMY_DATABASE_URI=db_url,
-        SQLALCHEMY_TRACK_MODIFICATIONS=False,
-    )
-
-    db.init_app(app)
-    app.cli.add_command(init_db)
-
-    app.add_url_rule("/", endpoint="index")
-
+    """Create application factory."""
+    app = Flask(__name__)
+    app.config.from_object(config[app.config["ENV"]])
+    register_extensions(app)
+    register_blueprints(app)
+    register_commands(app)
     return app
 
 
-@click.command("init-db")
-@with_appcontext
-def init_db():
-    db.drop_all()
-    db.create_all()
-    click.secho("Initialized the database.", fg="green")
+def register_extensions(app):
+    """Register app extensions."""
+    db.init_app(app)
+    migrate.init_app(app, db)
+    csrf_protect.init_app(app)
+    return None
+
+
+def register_blueprints(app):
+    """Plug blueprints."""
+    app.register_blueprint(main.bp)
+    return None
+
+
+def register_commands(app):
+    """Register custom commands."""
+    app.cli.add_command(commands.lint)
+    return None
