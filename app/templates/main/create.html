@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+<h1>{% block title %}New Post{% endblock %}</h1>
+
+{% block content %}
+<div class="action">
+  <form action="" method="post">
+    {{ form.hidden_tag() }}
+    {{ form.title(placeholder="Enter post title") }}
+    {{ form.brief(placeholder="Enter brief description") }}
+    {{ form.content(placeholder="Enter post content") }}
+    {{ form.submit(class="button") }}
+    {% if form.errors %}
+      <div class="form-errors">
+        {% for error in form.url.errors %}
+          <h4>{{ error }}</h4>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </form>
+</div>
+{% endblock %}

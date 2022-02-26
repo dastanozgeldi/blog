@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+<h1>{% block title %}{{ post.title }}{% endblock %}</h1>
+
+{% block content %}
+<div class="post">
+  <div class="title">{{ post.title }}</div>
+  <div class="pub_date">
+    written on {{ post.pub_date.strftime('%Y-%m-%d') }}
+    <br />
+    {% if post.modified %}
+    modified on {{ post.mod_date.strftime('%Y-%m-%d') }}
+    {% endif %}
+  </div>
+  <hr />
+  <div class="markdown">{{ post.get_html_content | safe }}</div>
+</div>
+{% endblock %}

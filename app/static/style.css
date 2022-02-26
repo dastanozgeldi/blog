@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto%20Mono');
+
+/* general style */
+body {
+  max-width: 880px;
+  font: 17px/25px "Roboto Mono", monospace;
+  margin: 0 auto;
+  padding: 0;
+  font-weight: 400;
+  color: black;
+}
+a {
+  color: #8f4b5d;
+  font-size: 18px;
+  text-decoration: none;
+  transition: 0.4s;
+}
+a:hover {
+  color: #f68741;
+}
+div.footer {
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+/* navbar */
+div.nav {
+  padding: 5px 40px;
+}
+div.nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+div.nav ul li {
+  padding: 15px 0;
+  cursor: pointer;
+}
+div.nav ul li.items {
+  position: relative;
+  width: auto;
+  margin: 0 16px;
+  text-align: center;
+  order: 3;
+  font-weight: bold;
+}
+div.nav ul li.items:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 5px;
+  height: 2px;
+  width: 100%;
+  background: #f68741;
+  opacity: 0;
+  transition: all 0.2s linear;
+}
+div.nav ul li.items:hover:after {
+  opacity: 1;
+  bottom: 8px;
+}
+div.nav ul li.logo {
+  flex: 1;
+  font-size: 23px;
+  font-weight: 600;
+  cursor: default;
+  user-select: none;
+}
+div.nav ul li i {
+  font-size: 23px;
+}
+div.nav ul li.btn {
+  display: none;
+}
+
+/* block content */
+div.content {
+  padding: 0 1rem 1rem;
+}
+
+/* blog styling */
+div.blog {
+  margin: 25px 122px 25px 102px;
+}
+div.header {
+  text-align: center;
+}
+div.blog h1,
+div.blog div.brief {
+  display: inline;
+  line-height: 25px;
+}
+div.blog h1 {
+  margin: 0;
+  font-size: 17px;
+}
+div.blog h1:after {
+  content: " —";
+}
+div.blog h1 a {
+  color: #8f4b5d;
+}
+div.blog div.brief,
+div.blog div.date,
+div.blog div.action,
+div.blog div.brief p {
+  margin: 0;
+  padding: 0;
+}
+div.blog div.detail {
+  margin-left: 140px;
+  margin-right: 70px;
+}
+div.blog div.date {
+  float: left;
+  width: 120px;
+  color: #7b8894;
+  text-align: right;
+  font-style: italic;
+  font-size: 14px;
+}
+div.blog div.action {
+  float: right;
+  width: 50px;
+  color: #7b8894;
+  text-align: right;
+  font-size: 14px;
+}
+
+/* /<id>/ page */
+div.post div.title {
+  line-height: 50px;
+  font-size: 48px;
+}
+div.post div.pub_date {
+  margin-top: 10px;
+  color: #7b8894;
+  text-align: left;
+  font-style: italic;
+}
+
+/* post content */
+div.action:last-child {
+  margin-bottom: 0;
+}
+div.action form {
+  margin: 1em 0;
+  display: flex;
+  flex-direction: column;
+}
+div.action label {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+div.action input,
+div.action textarea {
+  margin-bottom: 1em;
+}
+div.action textarea {
+  min-height: 12em;
+  resize: vertical;
+}
+div.action .button,
+input {
+  display: inline;
+}
+
+input.danger {
+  color: #cc2f2e;
+}
