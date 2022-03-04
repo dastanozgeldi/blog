@@ -13,7 +13,7 @@ projects. It's mostly Python, JavaScript or other languages mixed in.
 ## Computer Games
 
 - [Pong](https://github.com/Dositan/pong) - legendary pong game recreation. `2021-2021`
-- Jumper (not hosted) - own Mario-like game implementation. `2021-2021`
+- Jumper (privately hosted) - own Mario-like game implementation. `2021-2021`
 
 ## Websites
 
