@@ -1,28 +1,40 @@
-[tool.poetry]
+[project]
 name = "dositan"
 version = "0.2.0"
 description = ""
-authors = ["Dastan Ozgeldi <ozgdastan@gmail.com>"]
+authors = [
+    {name = "Dastan Ozgeldi", email = "ozgdastan@gmail.com"},
+]
+dependencies = [
+    "python-dotenv>=0.19.2",
+    "Flask>=2.0.3",
+    "Flask-SQLAlchemy>=2.5.1",
+    "Flask-WTF>=1.0.0",
+    "Flask-Migrate>=3.1.0",
+    "psycopg2>=2.9.3",
+    "mistune>=2.0.2",
+]
+requires-python = ">=3.8"
+license = {text = "MIT"}
 
-[tool.poetry.dependencies]
-python = "^3.8"
-Flask = "^2.0.2"
-Flask-SQLAlchemy = "^2.5.1"
-python-dotenv = "^0.19.2"
-Flask-WTF = "^1.0.0"
-psycopg2 = "^2.9.3"
-mistune = "^2.0.2"
-Flask-Migrate = "^3.1.0"
+[project.urls]
+homepage = ""
 
-[tool.poetry.dev-dependencies]
-pytest = "^5.2"
-black = "^21.12b0"
-flake8 = "^4.0.1"
-isort = "^5.10.1"
+[project.optional-dependencies]
+[tool]
+[tool.pdm]
+[tool.pdm.scripts]
+app = "flask run"
+[tool.pdm.dev-dependencies]
+lint = [
+    "black>=22.1.0",
+    "flake8>=4.0.1",
+    "isort>=5.10.1",
+]
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["pdm-pep517"]
+build-backend = "pdm.pep517.api"
 
 [tool.black]
 exclude = "migrations"
