@@ -8,7 +8,6 @@ projects. It's mostly Python, JavaScript or other languages mixed in.
 - [DosText](https://github.com/dastanozgeldi/dostext) - tcl/tk based text editor. `2021-`
 - [Passman](https://github.com/dastanozgeldi/passman) - a password-managing CLI tool. `2021-2021`
 - [Shortify](https://github.com/dastanozgeldi/shortify) - URL-shortening library with CLI support. `2021-`
-- [Horos](https://github.com/dastanozgeldi/horos) - daily horoscope parser. `2021-`
 
 ## Computer Games
 
