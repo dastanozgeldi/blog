@@ -77,7 +77,7 @@ def delete(id):
 
 # Static routes
 def get_md_content(route_name):
-    with open(f"app/static/{route_name}.md", "r") as f:
+    with open(f"app/static/markdown/{route_name}.md", "r") as f:
         markdown = f.read()
     return mistune.html(markdown)
 
