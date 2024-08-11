@@ -34,8 +34,8 @@ def post(id):
     return render_template("main/post.html", post=post)
 
 
-@bp.route("/create", methods=("GET", "POST"))
-def create():
+@bp.route("/new", methods=("GET", "POST"))
+def new():
     """Create a new post."""
     form = PostForm(request.form)
     if form.validate_on_submit():
@@ -47,7 +47,7 @@ def create():
         flash("Your post has been added.", "success")
         return redirect(url_for("main.index"))
 
-    return render_template("main/create.html", form=form)
+    return render_template("main/new.html", form=form)
 
 
 @bp.route("/<int:id>/update", methods=("GET", "POST"))
