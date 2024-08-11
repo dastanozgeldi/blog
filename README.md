@@ -1,4 +1,4 @@
-# Dositan's Homepage 🏠
+# Dastan's Homepage 🏠
 ~ A blog website of mine. [hosting soon]
 ![Site demo](app/static/demo.png)
 
@@ -14,7 +14,7 @@
 
 Clone the repository:
 
-    git clone https://github.com/Dositan/blog.git
+    git clone https://github.com/dastanozgeldi/blog.git
 
 Change directory, spawn virtual environment and install dependencies:
 
