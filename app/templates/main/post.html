@@ -4,13 +4,9 @@
 
 {% block content %}
 <div class="post">
-  <div class="title">{{ post.title }}</div>
+  <div class="title" style="font-weight: 800;">{{ post.title }}</div>
   <div class="pub_date">
-    written on {{ post.pub_date.strftime('%Y-%m-%d') }}
-    <br />
-    {% if post.modified %}
-    modified on {{ post.mod_date.strftime('%Y-%m-%d') }}
-    {% endif %}
+    {{ post.pub_date.strftime('%Y-%m-%d') }}
   </div>
   <hr />
   <div class="markdown">{{ post.get_html_content | safe }}</div>

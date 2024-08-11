@@ -22,5 +22,5 @@ Here is the table with percentages of languages I use the most.
 [stats]: https://github-readme-stats.vercel.app/api/top-langs/?username=dastanozgeldi&theme=onedark&layout=compact
 
 [discord]: https://discord.com/users/682935658671902730
-[twitter]: https://twitter.com/dosekwastaken
+[twitter]: https://twitter.com/dastanozgeldi
 [telegram]: https://t.me/ozgeldi
